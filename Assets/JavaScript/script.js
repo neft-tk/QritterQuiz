@@ -14,15 +14,6 @@ let score = 0;
 let timeLeft 
 
 
-// When the start button is pressed, it starts the game,
-// Makes it so the next button will increase the index of our question array,
-// and calls the setNextQuestion function
-startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-})
-
 
 // Starts the game,
 // Sets score to zero at the start of each new game
@@ -88,7 +79,6 @@ function resetState() {
 function selectAnswer(event) {
     const selectedButton = event.target;
     const correct = selectedButton.dataset.correct;
-    // setStatusClass(document.body, correct);
     Array.from(answerButtonsEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -134,14 +124,13 @@ function clearStatusClass(element) {
 const saveScoreBtn = document.getElementById('saveScoreBtn');
 const playerName = document.getElementById('playerName');
 
-playerName.addEventListener('keyup', () => {
-    console.log(playerName.value);
-    saveScoreBtn.disabled = playerName.value;
-});
+saveScoreBtn.addEventListener('click', saveHighScore);
+
 
 function saveHighScore(event) {
-    console.log("Clicked the Save button");
     event.preventDefault();
+    console.log("Clicked the Save button");
+    console.log(playerName.value);
 };
 
 
@@ -176,6 +165,14 @@ function countdown() {
     }, 1000);
   }
 
+// When the start button is pressed, it starts the game,
+// Makes it so the next button will increase the index of our question array,
+// and calls the setNextQuestion function
+startButton.addEventListener('click', startGame);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+})
 
 const questions = [
     {

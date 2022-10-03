@@ -1,0 +1,125 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --neutral: #B2FFFF;
+    --wrong: #CC0000;
+    --correct: lightgreen;
+    --container-color: rgb(218, 218, 218);
+    --header: rgb(41, 41, 110);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neutral);
+}
+
+body.correct {
+    background-color: var(--correct);
+}
+
+body.wrong {
+    background-color: var(--wrong);
+}
+
+header {
+    position: absolute;
+    background-color: var(--header);
+    width: 100vw;
+    top: 0px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header h2 {
+    color: var(--correct);
+}
+
+#highscores 
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    background-color: var(--container-color);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px black;
+}
+
+.btnGrid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: lightblue;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: darkblue;
+    outline: none;
+}
+
+.btn:hover {
+    border-color: black;
+    background-color: beige;
+}
+
+.btn.correct {
+    background-color: var(--correct);
+    color: black;
+}
+
+.btn.wrong {
+    background-color: var(--wrong);
+}
+
+.startBtn, .nextBtn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    background-color: var(--header);
+    width: 100vw;
+    bottom: 0px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+* a {
+    color: rgb(12, 199, 199);
+    text-decoration: none;
+}
+
+* a:hover {
+    color: var(--container-color);
+}

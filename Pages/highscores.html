@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../Assets/style.css" />
+</head>
+<body>
+    <header>
+        <a id="home" href="../index.html">Home</a><h2 id="timer" style="visibility: hidden;">Be careful! You'll lose 10 seconds each time you answer incorrectly!</h2>
+    </header>
+    <main>
+        <div>
+            <h1 id="finalScore">0</h1>
+            <form>Player Name
+                <input
+                type="text"
+                name="playerName"
+                id="playerName"
+                placeholder="Your Initials Here"
+                />
+                <button 
+                type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" >Save
+            </button>
+            </form>
+        </div>
+        <div>
+            <h1>Your Most Recently Saved Highscore</h1>
+            <p>Player Name: <span id="saved-name"></span></p>
+            <p>Score: <span id="saved-score"></span></p>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    </main>
+    <footer id="footer">
+        <a id="footer" href="https://github.com/neft-tk" target="_blank">Neft's github</a>
+    </footer>
+</body>
+</html>
